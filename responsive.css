@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════ */
+/* RESPONSIVE                              */
+/* ═══════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .project--reverse .project__visual,
+  .project--reverse .project__info {
+    order: unset;
+  }
+
+  .project__meta-side {
+    display: none;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .hero__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+
+  .section__title--large {
+    font-size: var(--fs-2xl);
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(245, 240, 235, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 100;
+    padding: 6rem var(--gutter);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: var(--sp-md);
+  }
+
+  .nav-link {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--clr-text);
+  }
+
+  .nav-link--cta {
+    display: inline-block;
+    width: fit-content;
+    margin-top: var(--sp-sm);
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .project__stats {
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline__head {
+    flex-direction: column;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-md);
+  }
+
+  .contact__link--email {
+    font-size: var(--fs-lg);
+  }
+
+  .contact__social {
+    flex-direction: column;
+    gap: var(--sp-sm);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: var(--sp-xs);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

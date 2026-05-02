@@ -1,0 +1,219 @@
+/* ═══════════════════════════════════════ */
+/* HEADER / NAV                            */
+/* ═══════════════════════════════════════ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(245, 240, 235, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+  transition: transform var(--dur-med) var(--ease-out),
+              box-shadow var(--dur-med) var(--ease-out);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+}
+
+.site-header.hidden {
+  transform: translateY(-100%);
+}
+
+.header-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--sp-sm) var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  letter-spacing: -0.03em;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--clr-text);
+  color: var(--clr-bg);
+  border-radius: 8px;
+  font-size: var(--fs-sm);
+  font-weight: 800;
+}
+
+.logo-dot {
+  color: var(--clr-accent);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.nav-link {
+  font-family: var(--ff-display);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  transition: color var(--dur-fast);
+  letter-spacing: 0.01em;
+}
+
+.nav-link:hover {
+  color: var(--clr-text);
+}
+
+.nav-link--cta {
+  color: var(--clr-bg);
+  background: var(--clr-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+
+.nav-link--cta:hover {
+  background: var(--clr-accent);
+  color: white;
+  transform: scale(1.03);
+}
+
+/* Hamburger */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 32px;
+  height: 32px;
+  z-index: 110;
+}
+
+.menu-btn__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-text);
+  transition: transform var(--dur-med) var(--ease-out),
+              opacity var(--dur-fast);
+  transform-origin: center;
+}
+
+.menu-btn.active .menu-btn__line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menu-btn.active .menu-btn__line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+
+/* ═══════════════════════════════════════ */
+/* BUTTONS                                 */
+/* ═══════════════════════════════════════ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: 0.875rem 2rem;
+  border-radius: 100px;
+  transition: all var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--clr-text);
+  color: var(--clr-bg);
+}
+
+.btn--primary:hover {
+  background: var(--clr-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(196, 80, 26, 0.25);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-text);
+  border: 1.5px solid var(--clr-border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--clr-text);
+  transform: translateY(-2px);
+}
+
+
+/* ═══════════════════════════════════════ */
+/* TECH CHIPS                              */
+/* ═══════════════════════════════════════ */
+
+.project__tech-list,
+.stack-group__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project__tech-list span,
+.stack-chip {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  background: var(--clr-accent-soft);
+  color: var(--clr-accent);
+  border: 1px solid rgba(196, 80, 26, 0.15);
+  transition: all var(--dur-fast);
+}
+
+.section--dark .project__tech-list span,
+.section--dark .stack-chip {
+  background: rgba(245, 240, 235, 0.06);
+  color: rgba(245, 240, 235, 0.7);
+  border-color: rgba(245, 240, 235, 0.1);
+}
+
+.stack-chip:hover {
+  background: var(--clr-accent);
+  color: white;
+  border-color: var(--clr-accent);
+  transform: translateY(-2px);
+}
+
+
+/* ═══════════════════════════════════════ */
+/* REVEAL ANIMATION                        */
+/* ═══════════════════════════════════════ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
